@@ -1,0 +1,52 @@
+=====로봇 고수준/저수준====
+고수준: 연산, 카메라 등 높은 연산량
+저수준: 센서 데이터 수집/전처리, 짧고 일정한 주기의 제어
+
+로봇 고수준/저수준 분리 이유
+: 고수준은 높은 연산량, 저수준은 빠르고 일정한 제어 주기가 필요함
+SBC에는 여러 프로세스가 동시에 실행되어 제어 주기가 변할 수 있음
+
+	고수준		저수준
+작업	판단, 계획	직접 제어
+연산량	높음		낮음
+주요요소	연산량		실시간성
+HW	SBC		MCU
+OS	Linux		RTOS
+SW	ROS2		firmware, micro-Ros
+언어	python, c++	c, c++
+
+====Linux====
+user_name@host_name:~/parent_directory/current_directory$
+
+    user_name: 현재 로그인한 사용자 이름
+    host_name: 현재 접속한 컴퓨터(호스트) 이름
+    @: 사용자와 컴퓨터를 구분하는 표시
+    ~: 사용자의 home 디렉토리(폴더)
+    /: 폴더와 폴더를 구분하는 표시 (절대 경로)
+    parent_directory: 상위(부모) 디렉토리
+    current_directory: 현재 디렉토리
+    $: 일반 사용자 권한을 나타내는 표시 (#: 관리자 권한)
+
+pwd: print working directory (현재 주소)
+ls -a: list all (.숨김 파일)
+mkdir: make directory folder
+mkdir -p: make directory parent
+touch: make new file
+nano: 터미널에서 GUI 없이 편집기 사용
+
+echo: 입력 값을 터미널에 출력하거나 파일에 저장
+echo "hi": 터미널에 출력
+echo "hi" > test.txt: test.txt 파일에 hi 저장
+echo "again" >> test.txt: 덮어쓰기 X, 밑에 추가
+
+chmode: 권한 변경
+chmod +x file_name 실행 권한 부여
+chmod -x file_name 실행 권한 회수
+x:1, w:2, r:4 -:0
+
+sudo: 관리자(root) 권한으로 명령어 실행
+sudo rm 관리자_권한_폴더/관리자_권한_파일
+sudo nano 관리자_권한_폴더/관리자_권한_파일
+sudo apt update: 패키지 목록 갱신
+sudo apt upgrade: 설치된 패키지를 최신 버전으로 업데이트
+sudo apt install <package_name>: 패키지 설치
