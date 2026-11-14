@@ -15,6 +15,7 @@ OS	Linux		RTOS
 SW	ROS2		firmware, micro-Ros
 언어	python, c++	c, c++
 
+
 ====Linux====
 user_name@host_name:~/parent_directory/current_directory$
 
@@ -44,9 +45,28 @@ chmod +x file_name 실행 권한 부여
 chmod -x file_name 실행 권한 회수
 x:1, w:2, r:4 -:0
 
-sudo: 관리자(root) 권한으로 명령어 실행
-sudo rm 관리자_권한_폴더/관리자_권한_파일
-sudo nano 관리자_권한_폴더/관리자_권한_파일
-sudo apt update: 패키지 목록 갱신
-sudo apt upgrade: 설치된 패키지를 최신 버전으로 업데이트
-sudo apt install <package_name>: 패키지 설치
+
+====MCU====
+ESP32
+    - 칩: CPU, 메모리 및 주변 장치 등을 통합한 반도체
+    - 모듈: 칩과 Flash, 무선 통신 관련 부품 등을 통합
+    - 개발 보드: 모듈에 전원 회로 등을 추가
+
+
+====Embedded Systems====
+: 특정 기능을 수행하도록 설계된 시스템. MCU 기반으로 동작.
+센서나 액추에이터랑 연결하여 물리적 환경과 상호작용함.
+낮은 연산량과 제힌된 컴퓨팅 자원, 실기간 처리 및 제어에 적합함.
+
+기초 용어
+***V=IR***
+전기적 기초: VCC(+) -> GND(-), (Common GND: 전체 시스템의 GND 통합)
+GPIO(General Purpose Input/Output): 범용적인 핀 연결
+    Input: 전기가 들어옴. ex) 센서...
+    Output: 전기가 나감. ex) 모터, LED...
+디지털 신호: 로직볼트는 해당 회로에서 작동하는 V (ESP는 3.3V), 
+    High: 최대  V  
+    Low: 0V
+아날로그 입출력: on/off X, 연속적인 값
+    ** ADC(Analog to Digit): 8bit -> 0-255으로 나눠서 변환. ESP는 12bit(0-4095)
+    DAC(Digit to Analog)
