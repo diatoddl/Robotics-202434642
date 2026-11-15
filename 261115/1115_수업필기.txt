@@ -1,0 +1,16 @@
+버튼 전류
+pull down 레지스터: 기본 상태 low, 누르면 high
+pull high 레지스터: 기본 상태 high, 누르면 low
+
+저수준에서는 바로 print X
+-> Serial 통신
+데이터 하나씩 입출력 (+ USB: Universal Serial Bus)
+
+Boud Rate = bit/s
+통신 채널에서 1초 동안 전송할 수 있는 신호 횟수
+
+PWM: Purse Width Modulation
+디지털 신호로 아날로그의 형태 제어
+아두이노에서는 디지털 핀의 ~ 표시만 사용 가능
+mapping-> analogRead 값을 (0-1023 -> 0-255)
+-> analogWrite(digit, mapping value)

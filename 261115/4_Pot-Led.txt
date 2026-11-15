@@ -1,0 +1,20 @@
+const int potPin = A2;
+const int ledPin = 9;
+
+void setup()
+{
+  Serial.begin(115200);
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop()
+{
+  int value = analogRead(potPin);
+  int pwm = map(value, 0, 1023, 0, 255);
+  
+  Serial.println(value);
+  analogWrite(ledPin, pwm);
+  
+  delay(50);
+}
+//아날로그는 핀모드 X
