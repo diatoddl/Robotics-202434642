@@ -13,4 +13,11 @@ PWM: Purse Width Modulation
 디지털 신호로 아날로그의 형태 제어
 아두이노에서는 디지털 핀의 ~ 표시만 사용 가능
 mapping-> analogRead 값을 (0-1023 -> 0-255)
--> analogWrite(digit, mapping value)
+-> analogWrite(digit, mapping values)
+
+====보드===
+IMU(파란색 작은 직사각형): 관성 측정. 
+기능 -> 가속도, 각속도(회전 속도), 자기장(자석 영향 받아서 이번엔 사용 X) 
+
+Servo: 목표 위치, 속도, 토크를 추종하도록 제어 
+GND:brown, Vcc:red, Signal:yellow
