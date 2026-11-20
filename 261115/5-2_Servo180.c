@@ -12,12 +12,14 @@ void setup() {
 }
 
 void loop() {
-    for (int i=1; i<=181; i+=2){
-    myServo.write(i);
+     for (int i = 0; i <= 180; i += 2) {
+        myServo.write(i);
+        delay(15);
     }
-    
-    for (int i=181; i<=1; i+=2){
-      myServo.write(i);
+
+    for (int i = 180; i >= 0; i -= 2) {
+        myServo.write(i);
+        delay(15);
     }
 }
 
